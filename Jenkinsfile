@@ -4,9 +4,8 @@ pipeline {
     stage('Rajan') {
       steps {
         git(url: 'https://github.com/pahwarajan/mygreenhobbies.github.io.git', branch: 'master', credentialsId: 'github', poll: true, changelog: true)
-        readFile '*'
         sh '''#!/bin/bash
-cp * /var'''
+cp blogs.html /var'''
         echo 'done'
       }
     }
